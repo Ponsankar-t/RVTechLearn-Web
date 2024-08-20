@@ -5,7 +5,6 @@
     --dark: #786b49;
 }
 
-
 /*** Spinner ***/
 
 .spinner {
@@ -42,6 +41,10 @@
         transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
         -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     }
+}
+
+#navbarCollapse{
+    background-color: #fff2d9;
 }
 
 #spinner {
