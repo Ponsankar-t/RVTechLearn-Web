@@ -3,13 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>RV TechLearn</title>
+    <title>RVTechLearn</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
     <script src="https://kit.fontawesome.com/06eeb58354.js" crossorigin="anonymous"></script>
 
     <!-- Favicon -->
-    <link href="img/icon.png" rel="icon">
+    <link href="img/icon.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,7 +71,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
         <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0" id="navbarCollapse">
+            <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
                     <img src="img/logo.png" height="90px">
                 </a>
@@ -82,11 +84,11 @@
                         <a href="about.html" class="nav-item nav-link">About Us</a>
                         <a href="service.html" class="nav-item nav-link">Services</a>
 
-                        <a href="price.html" class="nav-item nav-link">Clients</a>
-                        <a href="price.html" class="nav-item nav-link">Join our Team</a>
+                        <a href="#" class="nav-item nav-link">Clients</a>
+                        <a href="contact.html" class="nav-item nav-link">Join our Team</a>
                     </div>
 
-                    <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3">Contact Us</a>
+                    <a href="#" class="btn btn-primary py-2 px-4 ms-3 active">Contact Us</a>
                 </div>
             </nav>
 
@@ -141,7 +143,9 @@
                             </div>
                             <div class="ps-4">
                                 <h5 class="mb-2">Call to ask any question</h5>
-                                <h4 class="text-primary mb-0"><a href="tel:8291659619">+91 8291659619 </a></h4>
+                                <a href="tel:8291659619">
+                                    <h4 class="text-primary mb-0">+91 8291659619</h4>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -153,8 +157,8 @@
                             </div>
                             <div class="ps-4">
                                 <h5 class="mb-2">Email to get free quote</h5>
-                                <a href="mailto: contact@rvtechlearn.com">
-                                    <h5 class="text-primary mb-0"> contact@rvtechlearn.com</h4>
+                                <a href="mailto: nidhi.badkundri@rvtechlearn.com">
+                                    <h5 class="text-primary mb-0"> nidhi.badkundri@rvtechlearn.com</h4>
                                 </a>
                             </div>
                         </div>
@@ -208,7 +212,7 @@
                                 const email = document.getElementById('email').value;
                                 const subject = encodeURIComponent(document.getElementById('subject').value);
                                 const message = encodeURIComponent(document.getElementById('message').value);
-                                const mailtoLink = `mailto:${"contact.badkundri@rvtechlearn.com"}?subject=${subject}&body=${message}`;
+                                const mailtoLink = `mailto:${"nidhi.badkundri@rvtechlearn.com"}?subject=${subject}&body=${message}`;
                                 // document.getElementById('mailtoLink').innerHTML = `<a href="${mailtoLink}" class="btn btn-success">Click here to send your email</a>`;
                                 window.location.href = mailtoLink;
                             }
@@ -234,13 +238,13 @@
                     <div class="owl-carousel vendor-carousel">
                         <img src="img/cmp1.png" alt="">
                         <img src="img/cmp2.jpeg" alt="">
-                        <img src="img/ibm.webp" alt="">
+                        <img src="img/cmp3.png" alt="">
                         <img src="img/cmp4.png" alt="">
                         <img src="img/cmp5.png" alt="">
                         <img src="img/cmp6.jpeg" alt="">
-                        <img src="img/pnta.png" alt="">
+                        <img src="img/cmp7.png" alt="">
                         <img src="img/cmp8.jpeg" alt="">
-                        <img src="img/race.png" alt="">
+                        <img src="img/cmp9.png" alt="">
                     </div>
                 </div>
             </div>
@@ -283,15 +287,11 @@
                                 </div>
                                 <div class="d-flex mb-2">
                                     <i class="bi bi-envelope-open text-primary me-2"></i>
-                                    <p class="mb-0"><a href="mailto:contact@rvtechlearn.com">
-                                            contact@rvtechlearn.com</a>
-                                    </p>
+                                    <p class="mb-0">nidhi.badkundri@rvtechlearn.com</p>
                                 </div>
                                 <div class="d-flex mb-2">
                                     <i class="bi bi-telephone text-primary me-2"></i>
-                                    <p><a href="tel:8291659619">+91 8291659619 </a> <br> <a
-                                            href="tel:+91 9967482137">+91
-                                            9967482137</a></p>
+                                    <p class="mb-0">+91 8291659619</p>
                                 </div>
                                 <div class="d-flex mt-4">
                                     <a class="btn btn-primary btn-square me-2" href="https://x.com/RVTechLearn"><i
@@ -350,12 +350,12 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid text-white" style="background: #ae9551;">
+        <div class="container-fluid text-white" style="background: #061429;">
             <div class="container text-center">
                 <div class="row justify-content-end">
                     <div class="col-lg-8 col-md-6">
                         <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                            <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">RV TechLearn</a>. All
+                            <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">RVTechLearn</a>. All
                                 Rights Reserved.
 
                                 <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
