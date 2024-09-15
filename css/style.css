@@ -70,6 +70,7 @@ h3,
 h4,
 .fw-semi-bold {
     font-weight: 700 !important;
+    font-family: sans-serif;            
 }
 
 h5,
@@ -136,11 +137,11 @@ h6,
 /*** Navbar ***/
 
 .navbar-dark .navbar-nav .nav-link {
-    font-family: 'Lora';
+    font-family: inherit;
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
-    color: #eae6dd;
+    color: #ffffff;
     font-size: 18px;
     font-weight: 600;
     outline: none;
@@ -149,7 +150,7 @@ h6,
 
 .sticky-top.navbar-dark .navbar-nav .nav-link {
     padding: 20px 0;
-    color: var(--dark);
+    color: black;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -190,6 +191,8 @@ h6,
         left: 0;
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
+        height: 80px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0.23715423669467783) 30%, rgba(0, 0, 0, 0.30438112745098034) 100%);
     }
     .sticky-top.navbar-dark {
         position: fixed;
@@ -227,7 +230,7 @@ h6,
     left: 0;
     right: 0;
     bottom: 0;
-    background: #2d180c4d;
+    background: #0000006b;
     z-index: 1;
 }
 
@@ -400,7 +403,7 @@ h6,
     width: 15px;
     height: 15px;
     background: #DDDDDD;
-    border-radius: 2px;
+    border-radius: 100px;
     transition: .5s;
 }
 
@@ -525,6 +528,9 @@ h6,
 
 @media (min-width: 767.98px) {
     .footer-about {
-        margin-bottom: -75px;
+        
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding: 40px;
     }
 }

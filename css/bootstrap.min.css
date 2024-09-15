@@ -33,10 +33,16 @@
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))
 }
 
+[class*=" bi-"]::before {
+    color: #061429;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
 *,
 *::before,
 *::after {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -2390,7 +2396,7 @@ textarea.form-control-lg {
     width: 1rem;
     height: 1rem;
     margin-top: -.25rem;
-    background-color: #06A3DA;
+    background-color: #c49e7a;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2420,7 +2426,7 @@ textarea.form-control-lg {
 .form-range::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
-    background-color: #06A3DA;
+    background-color: #c49e7a;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2868,8 +2874,8 @@ fieldset:disabled .btn {
 .btn-check:focus+.btn-primary,
 .btn-primary:focus {
     color: #000;
-    background-color: #2bb1e0;
-    border-color: #1facde;
+    background-color: #c49e7a;
+    border-color: #c49e7a;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
@@ -2879,8 +2885,8 @@ fieldset:disabled .btn {
 .btn-primary.active,
 .show>.btn-primary.dropdown-toggle {
     color: #000;
-    background-color: #38b5e1;
-    border-color: #1facde
+    background-color: #c49e7a;
+    border-color: #c49e7a;
 }
 
 .btn-check:checked+.btn-primary:focus,
@@ -2888,7 +2894,7 @@ fieldset:disabled .btn {
 .btn-primary:active:focus,
 .btn-primary.active:focus,
 .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .25rem rgba(5, 139, 185, 0.5)
+    box-shadow: 0 0 0 .25rem #ab8868
 }
 
 .btn-primary:disabled,
@@ -7978,6 +7984,18 @@ fieldset:disabled .btn {
 .text-reset {
     color: inherit !important
 }
+.footerbox{
+    background-color: #d8ccc2;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+ 
+    .sticky-top.navbar-dark {
+        height: 60px;
+
+    }
+
 
 .bg-primary {
     background-color: #c49e7a;
@@ -8053,7 +8071,7 @@ fieldset:disabled .btn {
 
 .rounded {
     border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   
 }
 
 .rounded-0 {
