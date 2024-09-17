@@ -256,15 +256,15 @@
                                 </div>
                                 
                                 <div class="col-12">
-                                    <input type="text" id="subject" class="form-control border-0 bg-light px-4"
+                                    <input type="text" id="ph" class="form-control border-0 bg-light px-4"
                                         placeholder="Phone Number" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" id="subject" class="form-control border-0 bg-light px-4"
+                                    <input type="text" id="sub" class="form-control border-0 bg-light px-4"
                                         placeholder="Subject" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12">
-                                    <textarea id="message" class="form-control border-0 bg-light px-4 py-3" rows="4" style="height: 165px;"
+                                    <textarea id="msg" class="form-control border-0 bg-light px-4 py-3" rows="4" style="height: 165px;"
                                       placeholder="Message" required></textarea>
                                 </div>
                                 <div class="col-12">
@@ -279,9 +279,11 @@
                         <script>
                             function generateMailto() {
                                 const email = document.getElementById('email').value;
-                                const subject = encodeURIComponent(document.getElementById('subject').value);
-                                const message = encodeURIComponent(document.getElementById('message').value);
-                                const mailtoLink = `mailto:${"nidhi.badkundri@rvtechlearn.com"}?subject=${subject}&body=${message}`;
+                                const subject = document.getElementById('sub').value;
+                                let ph=document.getElementById('ph').value ;
+                                const message = document.getElementById('msg').value;
+                                ph=message+" Contact Number: "+ph;
+                                const mailtoLink = `mailto:${"contact@rvtechlearn.com"}?subject=${subject}&body=${ph}`;
                                 // document.getElementById('mailtoLink').innerHTML = `<a href="${mailtoLink}" class="btn btn-success">Click here to send your email</a>`;
                                 window.location.href = mailtoLink;
                             }

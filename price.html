@@ -394,16 +394,16 @@
 
     <script>
         function createMail() {
-            const name = document.getElementById('name');
-            console.log(name);
-            const email = document.getElementById('email');
-            const number=document.getElementById('number');
-            const msg = document.getElementById('msg');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const number = document.getElementById('number').value;
+            const msg = document.getElementById('msg').value;
             const emailto = "contact@rvtechlearn.com";
-            const mailto = "mailto:$contact@rvtechlearn.com?subject=${name}&body=${msg}";
+            const mailto = `mailto:${emailto}?subject=${name}&body=${msg}`;
             window.location.href = mailto;
         }
     </script>
+    
 </body>
 </html>
 
