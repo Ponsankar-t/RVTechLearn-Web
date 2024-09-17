@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/06eeb58354.js" crossorigin="anonymous"></script>
 
     <!-- Favicon -->
-    <link href="img/icon.png" style="border-radius: 100px;" rel="icon">
+    <link href="img/favi.png" style="border-radius: 100px;" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0">
-                <img src="img/logo.png" height="90px">
+                <img src="img/logo.png" height="60px">
 
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -59,12 +59,13 @@
                     <a href="about.html" class="nav-item nav-link">About Us</a>
                     <a href="service.html" class="nav-item nav-link">Services</a>
 
-                    <a href="#" class="nav-item nav-link">Clients</a>
+                    <a href="experience.html" class="nav-item nav-link">Clients</a>
                     <a href="price.html" class="nav-item nav-link active">Join our Team</a>
                     <a href="contact.html" class="nav-item nav-link">Contact Us</a>
                 </div>
 
-                <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3">Brochure</a>
+                <a href="#" class="btn btn-primary py-2 px-4 ms-3" data-bs-toggle="modal" data-bs-target="#brochureModal" style="text-align: center; display: flex;">Brochure</a>
+
             </div>
         </nav>
 
@@ -80,6 +81,86 @@
         </div>
     </div>
     <!-- Navbar End -->
+
+    <!-- Brochure Modal Start -->
+    <div class="modal fade" id="brochureModal" tabindex="-1" aria-labelledby="brochureModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="brochureModalLabel">Get Brochure</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="section-title text-center pb-3 mb-5 mx-auto">
+                        <h1 class="fw-bold text-primary text-uppercase">Get Brochure</h1>
+                        <h4 class="mb-0">Know our methods and strategies</h4>
+                    </div>
+                    <form id="form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" id="name" class="form-control border-0 bg-light px-4" name="name"
+                                    placeholder="Your Name" style="height: 55px;" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" id="email" class="form-control border-0 bg-light px-4" name="email"
+                                    placeholder="Your Email" style="height: 55px;" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" id="subject" class="form-control border-0 bg-light px-4"
+                                    placeholder="Subject" style="height: 55px;" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea id="message" class="form-control border-0 bg-light px-4 py-3" rows="4"
+                                    placeholder="Message" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <input type="submit" id="button" value="Download Brochure" class="btn btn-primary w-100 py-3">
+                            </div>
+                        </div>
+                    </form>
+                    <p id="mailtoLink" style="margin-top: 20px;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brochure Modal End -->
+    
+    <!-- Bootstrap and JavaScript dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('Z0pKX_DLUMosbpfpc');
+    </script>
+    
+    <script>
+        const btn = document.getElementById('button');
+        
+        document.getElementById('form')
+          .addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            btn.value = 'Sending...';
+        
+            const serviceID = 'default_service';
+            const templateID = 'template_ds9wa5c';
+            emailjs.sendForm(serviceID, templateID, this)
+                  .then(() => {
+                      btn.value = 'Send Email';
+                      alert('Sent!');
+                      const link = document.createElement('a');
+                      link.href = 'UNOCODES_Broucher.pdf'; // Replace with your file URL or path
+                      link.download = 'BROCHURE.pdf'; // Name of the file to be downloaded
+                      link.click(); // Programmatically trigger the download
+                  }, (err) => {
+                      btn.value = 'Send Email';
+                      alert(JSON.stringify(err));
+                  });
+          });
+    </script>
+
 
 
     <!-- Full Screen Search Start -->
@@ -103,86 +184,7 @@
     <!-- Full Screen Search End -->
 
 
-    <!-- Quote Start -->
-    <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h1 class="fw-bold text-primary text-uppercase">Join our Team</h1>
-                        <h4 class="mb-0">Unleash your potential with us ,where innovation meets opportunity</h4>
-                    </div>
-                    <div class="row gx-3">
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Seamless environment</h5>
-                        </div>
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>Let us Know your interest
-                            </h5>
-                        </div>
-                    </div>
-                    <p class="mb-4">RVTechlearn stands as the leading
-                        hub for extensive training and
-                        consultancy services across various IT
-                        fields, including Artificial Intelligence,
-                        Machine Learning, Generative AI, Deep
-                        Learning, Data Science, Data Analytics,
-                        Full Stack Development, MERN Stack,
-                        Internet of Things (IoT), Robotics, etc.</p>
-                        <div class="d-flex align-items-center mb-4 wow fadeIn flex-column flex-md-row" data-wow-delay="0.6s">
-                            <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
-                                <div class="d-flex align-items-center mb-3 mb-md-0">
-                                    <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-phone-alt text-white"></i>
-                                    </div>
-                                    <div class="ps-4">
-                                        <h5 class="mb-2">Call to ask any question</h5>
-                                        <h4 class="text-primary mb-0">+91 8291659619</h4>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-3 mb-md-0">
-                                    <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                                        <i class="fa-solid fa-envelope text-white"></i>
-                                    </div>
-                                    <div class="ps-4">
-                                        <h4><a href="mailto:contact@rvtechlearn.com" style="color: #ae9551;">contact@rvtechlearn.com</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn"
-                        data-wow-delay="0.9s">
-                        <form onsubmit="createMail(); reset(); return false;">
-                            <div class="row g-3">
-                                <div class="col-xl-12">
-                                    <input type="text" id="name" class="form-control bg-light border-0"
-                                        placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" id="email" class="form-control bg-light border-0"
-                                        placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12">
-                                    <input type="number" id="number" class="form-control bg-light border-0"
-                                        placeholder="Your Number" style="height: 55px;">
-                                    
-                                </div>
-                                <div class="col-12">
-                                    <textarea id="msg" class="form-control bg-light border-0" rows="3"
-                                        placeholder="Message"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Join now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s"></div>
         <div class="container py-5">
             <div class="row g-5">
@@ -201,7 +203,9 @@
                         </div>
                     </div>
                     <p class="mb-4"><b>RV TechLearn</b> stands as the leading hub for extensive training and consultancy services across various IT fields, including Artificial Intelligence, Machine Learning, Generative AI, Deep Learning, Data Science, Data Analytics, Full Stack
-                        Development, Internet of Things (IoT), Robotics, etc.</p>
+                        Development, Internet of Things (IoT), Robotics, etc.
+                    <br><br>
+                    At RV TechLearn, we are committed to bridging the gap between theoretical knowledge and real-world applications. Our industry-aligned training programs are designed to equip professionals and students with the skills necessary to excel in the ever-evolving tech landscape.</p>
                         <div class="d-flex align-items-center mb-4 wow fadeIn flex-column flex-md-row" data-wow-delay="0.6s">
                             <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
                                 <div class="d-flex align-items-center mb-3 mb-md-0">
@@ -225,7 +229,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5" style="height: 480px;">
                     <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
                         <form onsubmit="createMail(); reset(); return false;">
                             <div class="row g-3">
@@ -254,32 +258,9 @@
     <!-- Quote End -->
 
 
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 mb-5">
-            <div class="bg-white">
-                <div class="owl-carousel vendor-carousel">
-                    <img src="img/cmp1.png" alt="">
-                    <img src="img/cmp2.jpeg" alt="">
-                    <img src="img/IBM_ICE.png" alt="">
-                    <img src="img/cmp4.png" alt="">
-                    <img src="img/cmp5.png" alt="">
-                    <img src="img/cmp6.jpeg" alt="">
-                    <img src="img/pnta.png" alt="">
-                    <img src="img/cmp8.jpeg" alt="">
-                    <img src="img/race.png" alt="">
-                    <img src="img/z1.png" alt="">
-                    
-                    <img src="img/z3.png" alt="">
-                    <img src="img/z4.png" alt="">
-                    <img src="img/z5.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
 
 
+   
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -290,7 +271,7 @@
                         <a href="index.html" class="navbar-brand">
                             <img width="200px" src="img/logo.png" alt="">
                         </a>
-                        <p class="mt-3 mb-4">Established in India by Mr. Rithik Raj
+                        <p class="mt-3 mb-4" style="color: #061429;">Established in India by Mr. Rithik Raj
                             Vaishya, RV TechLearn leverages years of
                             expertise and experience to provide
                             top-notch educational and consulting
@@ -381,8 +362,8 @@
         <div class="container text-center">
             <div class="row justify-content-end">
                 <div class="col-lg-8 col-md-6">
-                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">RVTechLearn</a>. All
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;margin-right:380px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#" >RVTechLearn</a>. All
                             Rights Reserved.
 
                         </p>
@@ -414,14 +395,15 @@
     <script>
         function createMail() {
             const name = document.getElementById('name');
+            console.log(name);
             const email = document.getElementById('email');
-            const number=document.getElementById('number')
+            const number=document.getElementById('number');
             const msg = document.getElementById('msg');
             const emailto = "contact@rvtechlearn.com";
-            const mailto = "mailto:${emailto}?subject=${name}&body=${msg}";
+            const mailto = "mailto:$contact@rvtechlearn.com?subject=${name}&body=${msg}";
             window.location.href = mailto;
         }
     </script>
 </body>
-
 </html>
+
